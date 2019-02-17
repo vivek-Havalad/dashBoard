@@ -1,0 +1,52 @@
+// Allows the execution of Javascript functions after the page has completed loading.
+function MultiOnLoad() {
+	this.loaded = 0;
+	// list of onload functions
+	this.ol = new Array();
+	// push an onload function
+	this.push = function(_fn) {
+		//console.log("push");
+		if (this.loaded) {
+			//console.log("exec");
+			_fn();
+			return;
+		}
+		//console.log("queue");
+		this.ol.push(_fn);
+		return true;
+	};
+}
+document.bodyOnLoad  = new MultiOnLoad();
+
+
+
+//This function is used to update the clock displayed in the channel nav bar
+function updateClock(){
+	var date = new Date();
+	var hours = checkTime(date.getHours());
+	var minutes = checkTime(date.getMinutes());
+	var seconds = checkTime(date.getSeconds());
+	document.getElementById("top-bar-time").innerHTML = hours+":"+minutes+":"+seconds;
+}
+
+function checkTime(time){
+if(time < 10){
+	time = "0"+time;
+}
+	return time;
+}
+
+var clockList = {};
+var clockPeriodJS = {};
+var serverDate;
+var clientTimeOnLoad;
+var divName = new Array();
+var sbetElem = new Array();
+var custLang;
+ob.Cashout.Widget.prototype = (function() {
+	var instance = ob.Cashout;
+	var core = ob.Cashout.core;
+})();
+
+
+
